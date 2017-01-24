@@ -734,3 +734,128 @@ I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow devi
 [W 02:01:03.334 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=5F14AE103E20400E97EA995456CC8C9E (150.70.173.49) 2.52ms referer=None
 [W 02:02:36.681 NotebookApp] Replacing stale connection: ac11001f-5588-4ed8-841f-f4a835b9091e:7E5BCC6CDB84441D93D1FDF4A72E66CE
 [W 02:02:36.767 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=7E5BCC6CDB84441D93D1FDF4A72E66CE (150.70.188.171) 87.84ms referer=None
+[I 02:41:41.930 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 02:42:43.235 NotebookApp] Replacing stale connection: ac11001f-5588-4ed8-841f-f4a835b9091e:AA11E377204C45B082B2DF5A3CBADAC6
+[W 02:42:43.306 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=AA11E377204C45B082B2DF5A3CBADAC6 (150.70.173.58) 73.26ms referer=None
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 3.94GiB
+Free memory: 3.91GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 02:45:37.093 NotebookApp] Replacing stale connection: ac11001f-5588-4ed8-841f-f4a835b9091e:BCB6F732445249799DD23FB348C0664D
+[W 02:45:37.367 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=BCB6F732445249799DD23FB348C0664D (150.70.173.48) 276.12ms referer=None
+[I 02:46:10.388 NotebookApp] Kernel interrupted: ac11001f-5588-4ed8-841f-f4a835b9091e
+[W 02:48:01.515 NotebookApp] Replacing stale connection: ac11001f-5588-4ed8-841f-f4a835b9091e:5C9800730F0A4832892570DB1B7C7078
+[W 02:48:01.617 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=5C9800730F0A4832892570DB1B7C7078 (150.70.173.47) 103.96ms referer=None
+[I 02:49:02.775 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 02:55:38.190 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:01:38.195 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:07:38.834 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:09:08.567 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:09:33.719 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:09:51.067 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:09:59.388 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:21:26.978 NotebookApp] Kernel shutdown: ac11001f-5588-4ed8-841f-f4a835b9091e
+[I 03:28:37.291 NotebookApp] Kernel started: 8d0b471c-b8ef-439a-ab34-4efc73adc4c3
+[W 03:30:24.002 NotebookApp] Replacing stale connection: 8d0b471c-b8ef-439a-ab34-4efc73adc4c3:3FA7BB2E51E6434789F85112612CE170
+[W 03:30:24.075 NotebookApp] 400 GET /api/kernels/8d0b471c-b8ef-439a-ab34-4efc73adc4c3/channels?session_id=3FA7BB2E51E6434789F85112612CE170 (150.70.188.177) 75.20ms referer=None
+[I 03:31:10.255 NotebookApp] Kernel shutdown: 8d0b471c-b8ef-439a-ab34-4efc73adc4c3
+[I 03:38:19.371 NotebookApp] Kernel started: 65331ef5-fbec-4b90-bba3-b1288ec3661d
+[W 03:39:06.455 NotebookApp] Replacing stale connection: 65331ef5-fbec-4b90-bba3-b1288ec3661d:FFC58BDFE2FA460183BBFB583D89294D
+[W 03:39:07.255 NotebookApp] 400 GET /api/kernels/65331ef5-fbec-4b90-bba3-b1288ec3661d/channels?session_id=FFC58BDFE2FA460183BBFB583D89294D (50.112.194.65) 802.51ms referer=None
+[I 03:39:44.474 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 03:40:02.292 NotebookApp] Kernel shutdown: 65331ef5-fbec-4b90-bba3-b1288ec3661d
+[W 03:47:17.935 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[I 03:47:45.971 NotebookApp] Kernel started: fee22733-144b-4a47-b5ba-801bbebb4358
+[W 03:49:16.073 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[W 03:49:33.055 NotebookApp] Replacing stale connection: fee22733-144b-4a47-b5ba-801bbebb4358:D50BE96A9F5345CFA2008B0158295B27
+[W 03:49:33.794 NotebookApp] 400 GET /api/kernels/fee22733-144b-4a47-b5ba-801bbebb4358/channels?session_id=D50BE96A9F5345CFA2008B0158295B27 (150.70.188.166) 740.54ms referer=None
+[I 03:50:39.814 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 03:50:39.815 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_Submission.ipynb
+[I 03:51:29.243 NotebookApp] Kernel shutdown: fee22733-144b-4a47-b5ba-801bbebb4358
+[W 03:51:37.538 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[I 03:51:56.740 NotebookApp] Kernel started: d40b32f1-fdb0-4045-be1b-f925efeff799
+[I 03:52:28.805 NotebookApp] Kernel shutdown: d40b32f1-fdb0-4045-be1b-f925efeff799
+[W 03:53:09.498 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[W 03:53:44.232 NotebookApp] 404 GET /api/kernels/d40b32f1-fdb0-4045-be1b-f925efeff799/channels?session_id=76E68E0E5E62429EBA4DD945F1003502 (150.70.173.5): Kernel does not exist: d40b32f1-fdb0-4045-be1b-f925efeff799
+[W 03:53:44.234 NotebookApp] 404 GET /api/kernels/d40b32f1-fdb0-4045-be1b-f925efeff799/channels?session_id=76E68E0E5E62429EBA4DD945F1003502 (150.70.173.5) 3.92ms referer=None
+[W 04:27:22.784 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[I 04:27:29.692 NotebookApp] Kernel started: 445357ec-365d-4c39-9937-dd58dded3e59
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 3.94GiB
+Free memory: 3.91GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 04:29:46.544 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[W 04:29:53.079 NotebookApp] Replacing stale connection: 445357ec-365d-4c39-9937-dd58dded3e59:C116E0AA85FA4D2EAE7771ECFF7B4E71
+[W 04:29:53.256 NotebookApp] 400 GET /api/kernels/445357ec-365d-4c39-9937-dd58dded3e59/channels?session_id=C116E0AA85FA4D2EAE7771ECFF7B4E71 (150.70.173.48) 180.02ms referer=None
+[I 04:30:04.405 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+W tensorflow/core/common_runtime/bfc_allocator.cc:217] Ran out of memory trying to allocate 2.77GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+W tensorflow/core/common_runtime/bfc_allocator.cc:217] Ran out of memory trying to allocate 3.38GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[I 04:45:40.562 NotebookApp] Kernel interrupted: 445357ec-365d-4c39-9937-dd58dded3e59
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 04:48:48.848 NotebookApp] Replacing stale connection: 445357ec-365d-4c39-9937-dd58dded3e59:BA3DB53831934EAFA6B40738728398C9
+[W 04:48:49.085 NotebookApp] 400 GET /api/kernels/445357ec-365d-4c39-9937-dd58dded3e59/channels?session_id=BA3DB53831934EAFA6B40738728398C9 (150.70.173.48) 238.72ms referer=None
+[I 04:48:54.577 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 04:51:33.996 NotebookApp] Replacing stale connection: 445357ec-365d-4c39-9937-dd58dded3e59:EFB7572159D54EF586F4C7BF3D122629
+[W 04:51:34.009 NotebookApp] 400 GET /api/kernels/445357ec-365d-4c39-9937-dd58dded3e59/channels?session_id=EFB7572159D54EF586F4C7BF3D122629 (150.70.188.168) 14.94ms referer=None
+[I 04:52:21.939 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 04:55:20.763 NotebookApp] Replacing stale connection: 445357ec-365d-4c39-9937-dd58dded3e59:4F9838DFA93D427D87BD4307BE169DB7
+[W 04:55:20.835 NotebookApp] 400 GET /api/kernels/445357ec-365d-4c39-9937-dd58dded3e59/channels?session_id=4F9838DFA93D427D87BD4307BE169DB7 (150.70.188.171) 73.64ms referer=None
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 04:57:54.317 NotebookApp] Replacing stale connection: 445357ec-365d-4c39-9937-dd58dded3e59:81FB797D874049B19903C0E6EB782011
+[W 04:57:54.383 NotebookApp] 400 GET /api/kernels/445357ec-365d-4c39-9937-dd58dded3e59/channels?session_id=81FB797D874049B19903C0E6EB782011 (150.70.173.44) 68.46ms referer=None
+[I 04:58:24.935 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 05:01:57.502 NotebookApp] Replacing stale connection: 445357ec-365d-4c39-9937-dd58dded3e59:33FA796CE73D4259811C8943A86D7EDA
+[W 05:01:57.661 NotebookApp] 400 GET /api/kernels/445357ec-365d-4c39-9937-dd58dded3e59/channels?session_id=33FA796CE73D4259811C8943A86D7EDA (150.70.173.42) 160.61ms referer=None
+[I 05:03:45.387 NotebookApp] Kernel shutdown: 445357ec-365d-4c39-9937-dd58dded3e59
+[I 05:04:15.047 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 05:11:34.391 NotebookApp] Kernel started: ce9af698-b4f4-469a-b813-82f832ee95fa
+[W 05:13:36.208 NotebookApp] Replacing stale connection: ce9af698-b4f4-469a-b813-82f832ee95fa:98A22FB707334D87AD734E464F8E3C0D
+[W 05:13:36.220 NotebookApp] 400 GET /api/kernels/ce9af698-b4f4-469a-b813-82f832ee95fa/channels?session_id=98A22FB707334D87AD734E464F8E3C0D (150.70.173.5) 14.12ms referer=None
+[W 05:20:05.480 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[W 05:21:23.582 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[W 05:21:37.016 NotebookApp] Replacing stale connection: ce9af698-b4f4-469a-b813-82f832ee95fa:91E12742AEAC42098DE1C529CF2472C3
+[W 05:21:37.031 NotebookApp] 400 GET /api/kernels/ce9af698-b4f4-469a-b813-82f832ee95fa/channels?session_id=91E12742AEAC42098DE1C529CF2472C3 (150.70.188.170) 16.66ms referer=None
+[I 05:23:19.290 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 05:23:19.292 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_Submission.ipynb
+[I 05:25:04.619 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 05:25:04.622 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_Submission.ipynb
+[I 05:26:13.167 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 05:26:13.169 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_Submission.ipynb
+[I 05:26:33.417 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 05:26:33.419 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_Submission.ipynb
+[I 05:26:56.320 NotebookApp] Kernel shutdown: ce9af698-b4f4-469a-b813-82f832ee95fa
+[W 05:33:26.846 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[I 05:33:36.694 NotebookApp] Kernel started: 9b97e1ac-3a7e-4620-854a-9df64eae0bd1
+[W 05:34:54.316 NotebookApp] Notebook Traffic_Sign_Classifier_Submission.ipynb is not trusted
+[W 05:35:39.425 NotebookApp] Replacing stale connection: 9b97e1ac-3a7e-4620-854a-9df64eae0bd1:38E4F37303644A3181B7EB1C4C1E8426
+[W 05:35:39.442 NotebookApp] 400 GET /api/kernels/9b97e1ac-3a7e-4620-854a-9df64eae0bd1/channels?session_id=38E4F37303644A3181B7EB1C4C1E8426 (150.70.173.47) 18.62ms referer=None
