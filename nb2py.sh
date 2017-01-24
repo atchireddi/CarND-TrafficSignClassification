@@ -1,0 +1,1 @@
+jupyter nbconvert --to python Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb

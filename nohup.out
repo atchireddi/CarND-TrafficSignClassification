@@ -1,0 +1,736 @@
+[NbConvertApp] Converting notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb to notebook
+[NbConvertApp] Executing notebook with kernel: python3
+[NbConvertApp] Writing 96068 bytes to Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[NbConvertApp] Converting notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb to notebook
+[NbConvertApp] Executing notebook with kernel: python3
+[C 18:12:05.626 NotebookApp] Bad config encountered during initialization:
+[C 18:12:05.626 NotebookApp] Unrecognized flag: '--no-brower'
+The Jupyter HTML Notebook.
+
+This launches a Tornado based HTML Notebook Server that serves up an
+HTML5/Javascript Notebook client.
+
+Subcommands
+-----------
+
+Subcommands are launched as `jupyter-notebook cmd [args]`. For information on
+using subcommand 'cmd', do: `jupyter-notebook cmd -h`.
+
+list
+    List currently running notebook servers.
+
+Options
+-------
+
+Arguments that take values are actually convenience aliases to full
+Configurables, whose aliases are listed on the help line. For more information
+on full configurables, see '--help-all'.
+
+--script
+    DEPRECATED, IGNORED
+--no-script
+    DEPRECATED, IGNORED
+--no-mathjax
+    Disable MathJax
+    
+    MathJax is the javascript library Jupyter uses to render math/LaTeX. It is
+    very large, so you may want to disable it if you have a slow internet
+    connection, or for offline use of the notebook.
+    
+    When disabled, equations etc. will appear as their untransformed TeX source.
+--debug
+    set log level to logging.DEBUG (maximize logging output)
+--no-browser
+    Don't open the notebook in a browser after startup.
+--generate-config
+    generate default config file
+-y
+    Answer yes to any questions instead of prompting.
+--pylab
+    DISABLED: use %pylab or %matplotlib in the notebook to enable matplotlib.
+--certfile=<Unicode> (NotebookApp.certfile)
+    Default: ''
+    The full path to an SSL/TLS certificate file.
+--port=<Int> (NotebookApp.port)
+    Default: 8888
+    The port the notebook server will listen on.
+--notebook-dir=<Unicode> (NotebookApp.notebook_dir)
+    Default: ''
+    The directory to use for notebooks and kernels.
+--config=<Unicode> (JupyterApp.config_file)
+    Default: ''
+    Full path of a config file.
+--client-ca=<Unicode> (NotebookApp.client_ca)
+    Default: ''
+    The full path to a certificate authority certificate for SSL/TLS client
+    authentication.
+--port-retries=<Int> (NotebookApp.port_retries)
+    Default: 50
+    The number of additional ports to try if the specified port is not
+    available.
+--keyfile=<Unicode> (NotebookApp.keyfile)
+    Default: ''
+    The full path to a private key file for usage with SSL/TLS.
+--log-level=<Enum> (Application.log_level)
+    Default: 30
+    Choices: (0, 10, 20, 30, 40, 50, 'DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL')
+    Set the log level by value or name.
+--pylab=<Unicode> (NotebookApp.pylab)
+    Default: 'disabled'
+    DISABLED: use %pylab or %matplotlib in the notebook to enable matplotlib.
+--transport=<CaselessStrEnum> (KernelManager.transport)
+    Default: 'tcp'
+    Choices: ['tcp', 'ipc']
+--ip=<Unicode> (NotebookApp.ip)
+    Default: 'localhost'
+    The IP address the notebook server will listen on.
+--browser=<Unicode> (NotebookApp.browser)
+    Default: ''
+    Specify what command to use to invoke a web browser when opening the
+    notebook. If not specified, the default browser will be determined by the
+    `webbrowser` standard library module, which allows setting of the BROWSER
+    environment variable to override it.
+
+To see all available configurables, use `--help-all`
+
+Examples
+--------
+
+    jupyter notebook                       # start the notebook
+    jupyter notebook --certfile=mycert.pem # use SSL/TLS certificate
+
+[W 18:15:34.351 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
+[W 18:15:34.351 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using authentication. This is highly insecure and not recommended.
+[I 18:15:34.359 NotebookApp] Serving notebooks from local directory: /home/carnd/CarND-Traffic-Sign-Classifier-Project
+[I 18:15:34.359 NotebookApp] 0 active kernels 
+[I 18:15:34.359 NotebookApp] The Jupyter Notebook is running at: http://[all ip addresses on your system]:8888/
+[I 18:15:34.360 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 18:15:45.183 NotebookApp] 302 GET / (166.170.40.160) 0.75ms
+[W 18:16:10.328 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[I 18:16:12.933 NotebookApp] Kernel started: f55d5335-75af-48a1-a663-842fa9b92e8d
+[I 18:16:45.224 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 18:16:45.226 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut.ipynb
+[I 18:16:59.405 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 18:16:59.406 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut.ipynb
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 3.94GiB
+Free memory: 196.00MiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+E tensorflow/stream_executor/cuda/cuda_driver.cc:1002] failed to allocate 196.00M (205520896 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY
+E tensorflow/stream_executor/cuda/cuda_dnn.cc:385] could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR
+E tensorflow/stream_executor/cuda/cuda_dnn.cc:352] could not destroy cudnn handle: CUDNN_STATUS_BAD_PARAM
+F tensorflow/core/kernels/conv_ops.cc:532] Check failed: stream->parent()->GetConvolveAlgorithms(&algorithms) 
+[I 18:17:12.933 NotebookApp] KernelRestarter: restarting kernel (1/5)
+WARNING:root:kernel f55d5335-75af-48a1-a663-842fa9b92e8d restarted
+[W 18:17:47.080 NotebookApp] Replacing stale connection: f55d5335-75af-48a1-a663-842fa9b92e8d:868BEBA68817428D911464FD02285DAC
+[W 18:17:47.189 NotebookApp] 400 GET /api/kernels/f55d5335-75af-48a1-a663-842fa9b92e8d/channels?session_id=868BEBA68817428D911464FD02285DAC (150.70.173.10) 111.62ms referer=None
+[I 18:18:09.628 NotebookApp] 302 GET / (150.70.173.10) 0.76ms
+[W 18:18:10.289 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[I 18:18:14.703 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 18:18:14.704 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut.ipynb
+[I 18:18:51.187 NotebookApp] Kernel shutdown: f55d5335-75af-48a1-a663-842fa9b92e8d
+[W 18:20:57.072 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[I 18:20:59.401 NotebookApp] Kernel started: ba3d6caf-6e51-4c6e-814f-ef092fba2435
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 3.94GiB
+Free memory: 196.00MiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+E tensorflow/stream_executor/cuda/cuda_driver.cc:1002] failed to allocate 196.00M (205520896 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY
+E tensorflow/stream_executor/cuda/cuda_dnn.cc:385] could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR
+E tensorflow/stream_executor/cuda/cuda_dnn.cc:352] could not destroy cudnn handle: CUDNN_STATUS_BAD_PARAM
+F tensorflow/core/kernels/conv_ops.cc:532] Check failed: stream->parent()->GetConvolveAlgorithms(&algorithms) 
+[I 18:21:47.401 NotebookApp] KernelRestarter: restarting kernel (1/5)
+WARNING:root:kernel ba3d6caf-6e51-4c6e-814f-ef092fba2435 restarted
+[NbConvertApp] Writing 96630 bytes to Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+mail: Cannot parse address `Done 1024' (while expanding `Done 1024'): Malformed email address
+[W 18:22:53.666 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[W 18:22:57.021 NotebookApp] Replacing stale connection: ba3d6caf-6e51-4c6e-814f-ef092fba2435:70C85496A5B045148513E6AC16BF31A7
+[W 18:22:57.093 NotebookApp] 400 GET /api/kernels/ba3d6caf-6e51-4c6e-814f-ef092fba2435/channels?session_id=70C85496A5B045148513E6AC16BF31A7 (150.70.173.57) 73.48ms referer=None
+[I 18:23:00.233 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 18:23:00.235 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut.ipynb
+[W 18:23:07.314 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[I 18:23:09.971 NotebookApp] Kernel started: 34fd469a-4007-4a00-b44b-86c572816ac2
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 3.94GiB
+Free memory: 3.91GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 18:24:37.531 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[W 18:24:43.151 NotebookApp] Replacing stale connection: 34fd469a-4007-4a00-b44b-86c572816ac2:F4CA15212F5C4EC4869AA135A6243416
+[W 18:24:43.232 NotebookApp] 400 GET /api/kernels/34fd469a-4007-4a00-b44b-86c572816ac2/channels?session_id=F4CA15212F5C4EC4869AA135A6243416 (150.70.173.52) 82.91ms referer=None
+[I 18:25:11.070 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:25:11.073 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:28:16.318 NotebookApp] Kernel shutdown: 34fd469a-4007-4a00-b44b-86c572816ac2
+[I 18:32:35.150 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:32:35.151 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:43:11.883 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:43:11.886 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:45:11.083 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:45:11.084 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:45:41.095 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:45:41.096 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:47:10.859 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:47:10.861 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:48:12.006 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:48:12.007 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:51:11.096 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:51:11.097 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:53:11.836 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:53:11.838 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:53:16.525 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 18:53:16.527 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 18:59:41.318 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 18:59:41.319 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut.ipynb
+[I 18:59:41.420 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 18:59:41.421 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut.ipynb
+[I 19:01:03.986 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 19:01:03.988 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut.ipynb
+[I 19:01:10.745 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:01:10.747 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:03:11.351 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:03:11.353 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:04:25.509 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:04:25.510 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:05:11.359 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:05:11.360 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:05:17.358 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:05:17.359 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:05:51.926 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:05:51.927 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:08:06.476 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:08:06.477 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:08:20.425 NotebookApp] Kernel shutdown: ba3d6caf-6e51-4c6e-814f-ef092fba2435
+[W 19:08:27.400 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[I 19:08:29.731 NotebookApp] Kernel started: 2f54f346-26fa-479c-98bb-1fb1fef13bea
+[I 19:09:55.524 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:09:55.526 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:10:55.985 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:10:55.987 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:11:05.622 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[W 19:11:09.305 NotebookApp] Replacing stale connection: 2f54f346-26fa-479c-98bb-1fb1fef13bea:94FDE8FF5DE643DE8FDFEF0BA53AAED1
+[W 19:11:09.414 NotebookApp] 400 GET /api/kernels/2f54f346-26fa-479c-98bb-1fb1fef13bea/channels?session_id=94FDE8FF5DE643DE8FDFEF0BA53AAED1 (150.70.173.41) 110.95ms referer=None
+[I 19:12:47.951 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:12:47.953 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:14:23.202 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:14:23.204 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:22:40.918 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:22:40.920 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:22:44.528 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:22:44.529 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:35:17.862 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:35:17.882 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:35:18.814 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:35:18.815 NotebookApp] Saving untrusted notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:44:30.555 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:44:32.834 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:44:47.474 NotebookApp] Copying Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb to 
+[W 19:44:47.518 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[I 19:44:51.451 NotebookApp] Kernel started: 717cafdc-f148-4487-ad7f-332f05a57d13
+[I 19:46:52.353 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:46:57.515 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024-Copy1.ipynb (150.70.173.51): No such file or directory: Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024-Copy1.ipynb
+[W 19:46:57.524 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024-Copy1.ipynb (150.70.173.51) 10.17ms referer=None
+[W 19:46:59.018 NotebookApp] No such file or directory: Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024-Copy1.ipynb
+[W 19:46:59.018 NotebookApp] 404 GET /api/contents/Traffic_Sign_Classifier_DropOut-3xConv1Filters-FC1024-Copy1.ipynb?type=notebook&_=1485200689165 (150.70.173.46) 0.96ms referer=None
+[I 19:47:02.484 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 19:47:04.405 NotebookApp] Replacing stale connection: 717cafdc-f148-4487-ad7f-332f05a57d13:689799D385A54BBB8B9954486A71A699
+[W 19:47:04.482 NotebookApp] 400 GET /api/kernels/717cafdc-f148-4487-ad7f-332f05a57d13/channels?session_id=689799D385A54BBB8B9954486A71A699 (150.70.173.48) 78.65ms referer=None
+[I 19:47:10.605 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:55:55.002 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 19:57:38.669 NotebookApp] Copying Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb to 
+[W 19:57:38.719 NotebookApp] Notebook Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[I 19:57:42.477 NotebookApp] Kernel started: e9a60eff-7e1d-470f-bcef-310daf601a38
+[W 19:59:16.305 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb (150.70.188.168): No such file or directory: Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb
+[W 19:59:16.307 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb (150.70.188.168) 2.20ms referer=None
+[W 19:59:25.395 NotebookApp] No such file or directory: Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb
+[W 19:59:25.396 NotebookApp] 404 GET /api/contents/Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb?type=notebook&_=1485201459919 (150.70.188.165) 1.20ms referer=None
+[W 19:59:31.683 NotebookApp] Replacing stale connection: e9a60eff-7e1d-470f-bcef-310daf601a38:C19E7C5C504A434B9AF2ACC55B770C3E
+[W 19:59:31.789 NotebookApp] 400 GET /api/kernels/e9a60eff-7e1d-470f-bcef-310daf601a38/channels?session_id=C19E7C5C504A434B9AF2ACC55B770C3E (150.70.188.180) 108.73ms referer=None
+[I 20:03:43.416 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:05:03.567 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:06:22.782 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:06:28.222 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:09:11.804 NotebookApp] Kernel shutdown: 2f54f346-26fa-479c-98bb-1fb1fef13bea
+[I 20:09:12.207 NotebookApp] Kernel shutdown: 717cafdc-f148-4487-ad7f-332f05a57d13
+[I 20:09:12.611 NotebookApp] Kernel shutdown: e9a60eff-7e1d-470f-bcef-310daf601a38
+[I 20:09:23.965 NotebookApp] Kernel started: 1660b791-7ad8-404c-bf83-9e89aac139be
+[W 20:11:05.525 NotebookApp] Replacing stale connection: 1660b791-7ad8-404c-bf83-9e89aac139be:B2CA38229AD34436801768326359CEB8
+[W 20:11:05.602 NotebookApp] 400 GET /api/kernels/1660b791-7ad8-404c-bf83-9e89aac139be/channels?session_id=B2CA38229AD34436801768326359CEB8 (150.70.173.6) 78.50ms referer=None
+[I 20:13:24.513 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:17:24.991 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+OpenCV Error: Assertion failed (_src.type() == CV_8UC1) in equalizeHist, file /home/travis/miniconda/conda-bld/work/opencv-3.1.0/modules/imgproc/src/histogram.cpp, line 3687
+[W 20:20:13.867 NotebookApp] Replacing stale connection: 1660b791-7ad8-404c-bf83-9e89aac139be:1180E41B93DF4E1389EB692DEC256B01
+[W 20:20:14.088 NotebookApp] 400 GET /api/kernels/1660b791-7ad8-404c-bf83-9e89aac139be/channels?session_id=1180E41B93DF4E1389EB692DEC256B01 (150.70.188.180) 223.49ms referer=None
+[I 20:20:21.061 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:20:56.802 NotebookApp] Kernel restarted: 1660b791-7ad8-404c-bf83-9e89aac139be
+[W 20:20:57.839 NotebookApp] Replacing stale connection: 1660b791-7ad8-404c-bf83-9e89aac139be:1180E41B93DF4E1389EB692DEC256B01
+[I 20:21:07.180 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 20:22:40.981 NotebookApp] WebSocket ping timeout after 90001 ms.
+[W 20:23:07.897 NotebookApp] 400 GET /api/kernels/1660b791-7ad8-404c-bf83-9e89aac139be/channels?session_id=DB0695CE3EB64003AF680DF2C65705AE (150.70.173.9) 2.26ms referer=None
+[I 20:51:59.192 NotebookApp] 302 GET / (166.170.37.101) 0.50ms
+[I 20:53:39.783 NotebookApp] 302 GET / (150.70.173.46) 0.46ms
+[I 20:54:17.743 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 20:54:39.755 NotebookApp] Replacing stale connection: 1660b791-7ad8-404c-bf83-9e89aac139be:DEBDF27C440C44A18CFA6422C45AE34F
+[W 20:54:39.871 NotebookApp] 400 GET /api/kernels/1660b791-7ad8-404c-bf83-9e89aac139be/channels?session_id=DEBDF27C440C44A18CFA6422C45AE34F (150.70.173.10) 118.21ms referer=None
+[I 20:55:19.124 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:55:40.530 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:55:46.670 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 20:55:50.379 NotebookApp] Kernel shutdown: 1660b791-7ad8-404c-bf83-9e89aac139be
+[I 20:56:07.037 NotebookApp] Kernel started: 5b6bfbac-8be2-4315-81ef-be4e37c6d7e5
+[W 20:57:40.049 NotebookApp] Replacing stale connection: 5b6bfbac-8be2-4315-81ef-be4e37c6d7e5:C436F9003DC8452C9A67C03BC03AA294
+[W 20:57:40.155 NotebookApp] 400 GET /api/kernels/5b6bfbac-8be2-4315-81ef-be4e37c6d7e5/channels?session_id=C436F9003DC8452C9A67C03BC03AA294 (150.70.173.45) 108.45ms referer=None
+[I 20:58:08.617 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:00:07.847 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:00:17.558 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:02:07.810 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:04:08.236 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:04:17.884 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:04:22.526 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 21:39:00.750 NotebookApp] Notebook Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[W 21:40:34.826 NotebookApp] Replacing stale connection: 5b6bfbac-8be2-4315-81ef-be4e37c6d7e5:01E3C43B14704B3F8CA6B77AFF4A19CF
+[W 21:40:34.946 NotebookApp] 400 GET /api/kernels/5b6bfbac-8be2-4315-81ef-be4e37c6d7e5/channels?session_id=01E3C43B14704B3F8CA6B77AFF4A19CF (150.70.188.167) 122.43ms referer=None
+[W 21:40:36.370 NotebookApp] Notebook Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[W 21:41:03.584 NotebookApp] Notebook Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[W 21:42:34.705 NotebookApp] Notebook Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[W 21:42:52.388 NotebookApp] Replacing stale connection: 5b6bfbac-8be2-4315-81ef-be4e37c6d7e5:B287822650E047E08327C2ACD06ECEE4
+[W 21:42:52.516 NotebookApp] 400 GET /api/kernels/5b6bfbac-8be2-4315-81ef-be4e37c6d7e5/channels?session_id=B287822650E047E08327C2ACD06ECEE4 (150.70.173.47) 129.58ms referer=None
+[I 21:43:06.698 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:43:09.066 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:48:55.071 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 21:48:57.350 NotebookApp] Notebook Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[W 21:50:24.369 NotebookApp] Replacing stale connection: 5b6bfbac-8be2-4315-81ef-be4e37c6d7e5:80B4631D5AB644E38EF7CCCF11A3B864
+[W 21:50:25.019 NotebookApp] 400 GET /api/kernels/5b6bfbac-8be2-4315-81ef-be4e37c6d7e5/channels?session_id=80B4631D5AB644E38EF7CCCF11A3B864 (150.70.188.176) 651.72ms referer=None
+[W 21:50:34.850 NotebookApp] Notebook Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb is not trusted
+[I 21:50:35.486 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 21:50:41.595 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 21:51:29.940 NotebookApp] Notebook Traffic_Sign_Classifier.ipynb is not trusted
+[I 21:51:30.843 NotebookApp] Kernel started: 68f44edd-8054-4d28-b5e1-b692413a7925
+[I 21:51:44.000 NotebookApp] Kernel shutdown: 68f44edd-8054-4d28-b5e1-b692413a7925
+[I 21:51:54.318 NotebookApp] Kernel started: ae71640e-ddfe-444b-98f5-b9c314fd34af
+[I 21:52:05.770 NotebookApp] Kernel shutdown: ae71640e-ddfe-444b-98f5-b9c314fd34af
+[W 21:52:16.519 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[I 21:52:19.977 NotebookApp] Kernel started: c2586f08-4af3-471e-a8bf-c7d0918557e2
+[W 21:53:35.454 NotebookApp] Notebook Traffic_Sign_Classifier.ipynb is not trusted
+[W 21:53:40.488 NotebookApp] 404 GET /api/kernels/68f44edd-8054-4d28-b5e1-b692413a7925/channels?session_id=EA6B224B04F2408189D458B39A11476B (150.70.173.8): Kernel does not exist: 68f44edd-8054-4d28-b5e1-b692413a7925
+[W 21:53:40.490 NotebookApp] 404 GET /api/kernels/68f44edd-8054-4d28-b5e1-b692413a7925/channels?session_id=EA6B224B04F2408189D458B39A11476B (150.70.173.8) 3.67ms referer=None
+[W 21:53:47.839 NotebookApp] 404 GET /api/kernels/ae71640e-ddfe-444b-98f5-b9c314fd34af/channels?session_id=1257F4B40FAF4163836D09BC3947C066 (150.70.173.5): Kernel does not exist: ae71640e-ddfe-444b-98f5-b9c314fd34af
+[W 21:53:47.840 NotebookApp] 404 GET /api/kernels/ae71640e-ddfe-444b-98f5-b9c314fd34af/channels?session_id=1257F4B40FAF4163836D09BC3947C066 (150.70.173.5) 3.53ms referer=None
+[I 21:54:21.161 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 21:54:21.893 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[W 21:54:32.891 NotebookApp] Replacing stale connection: c2586f08-4af3-471e-a8bf-c7d0918557e2:29C4CC4FC4C1427584AB9722114BAA1F
+[W 21:54:32.962 NotebookApp] 400 GET /api/kernels/c2586f08-4af3-471e-a8bf-c7d0918557e2/channels?session_id=29C4CC4FC4C1427584AB9722114BAA1F (150.70.173.52) 72.29ms referer=None
+[W 21:54:39.799 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[I 21:55:21.564 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:01:44.345 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:05:32.354 NotebookApp] Copying Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb to 
+[I 22:05:36.434 NotebookApp] Kernel started: d31f5479-4a47-4365-99e2-59b22ebce6bb
+[I 22:06:40.599 NotebookApp] Copying Traffic_Sign_Classifier_DropOut.ipynb to 
+[W 22:06:40.646 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[I 22:06:44.498 NotebookApp] Kernel started: 90381d5a-7cd4-4293-9435-eb891a5d760f
+[W 22:06:53.549 NotebookApp] File already exists: Traffic_Sign_Classifier.ipynb
+[W 22:06:53.549 NotebookApp] 409 PATCH /api/contents/Traffic_Sign_Classifier_DropOut-Copy1.ipynb (166.170.37.101) 1.50ms referer=http://54.183.246.164:8888/notebooks/Traffic_Sign_Classifier_DropOut-Copy1.ipynb
+[W 22:06:56.139 NotebookApp] File already exists: Traffic_Sign_Classifier.ipynb
+[W 22:06:56.139 NotebookApp] 409 PATCH /api/contents/Traffic_Sign_Classifier_DropOut-Copy1.ipynb (166.170.37.101) 1.35ms referer=http://54.183.246.164:8888/notebooks/Traffic_Sign_Classifier_DropOut-Copy1.ipynb
+[W 22:07:23.319 NotebookApp] No such file or directory: Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb
+[W 22:07:23.319 NotebookApp] 404 GET /api/contents/Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb?type=notebook&_=1485209132932 (150.70.188.168) 1.17ms referer=None
+[W 22:07:27.420 NotebookApp] Replacing stale connection: d31f5479-4a47-4365-99e2-59b22ebce6bb:1618E343DF1C40B384592EB41B207ADA
+[W 22:07:27.663 NotebookApp] 400 GET /api/kernels/d31f5479-4a47-4365-99e2-59b22ebce6bb/channels?session_id=1618E343DF1C40B384592EB41B207ADA (150.70.188.171) 245.47ms referer=None
+[W 22:07:27.978 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb (150.70.188.171): No such file or directory: Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb
+[W 22:07:27.979 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024-Copy1.ipynb (150.70.188.171) 1.81ms referer=None
+[I 22:07:39.507 NotebookApp] Saving file at /Traffic_Sign_Classifier_LeNet.ipynb
+[I 22:07:52.485 NotebookApp] Kernel shutdown: 90381d5a-7cd4-4293-9435-eb891a5d760f
+[W 22:08:43.152 NotebookApp] 404 GET /api/kernels/90381d5a-7cd4-4293-9435-eb891a5d760f/channels?session_id=1A3EBD400E09456BBE8CC5D18DF1BC8A (150.70.173.46): Kernel does not exist: 90381d5a-7cd4-4293-9435-eb891a5d760f
+[W 22:08:43.153 NotebookApp] 404 GET /api/kernels/90381d5a-7cd4-4293-9435-eb891a5d760f/channels?session_id=1A3EBD400E09456BBE8CC5D18DF1BC8A (150.70.173.46) 3.26ms referer=None
+[W 22:08:51.061 NotebookApp] No such file or directory: Traffic_Sign_Classifier_DropOut-Copy1.ipynb
+[W 22:08:51.062 NotebookApp] 404 GET /api/contents/Traffic_Sign_Classifier_DropOut-Copy1.ipynb?type=notebook&_=1485209201200 (150.70.173.9) 1.09ms referer=None
+[W 22:08:56.394 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_DropOut-Copy1.ipynb (150.70.173.9): No such file or directory: Traffic_Sign_Classifier_DropOut-Copy1.ipynb
+[W 22:08:56.396 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_DropOut-Copy1.ipynb (150.70.173.9) 1.94ms referer=None
+[I 22:09:52.994 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:10:20.709 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:11:06.574 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:11:10.724 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:12:04.331 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:13:16.574 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:14:20.761 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:14:22.560 NotebookApp] Saving file at /Traffic_Sign_Classifier_DropOut.ipynb
+[I 22:16:28.790 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb
+[I 22:20:07.914 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb
+[I 22:20:11.603 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[I 22:21:14.949 NotebookApp] Kernel shutdown: d31f5479-4a47-4365-99e2-59b22ebce6bb
+[I 22:21:15.453 NotebookApp] Kernel shutdown: 5b6bfbac-8be2-4315-81ef-be4e37c6d7e5
+[I 22:21:22.824 NotebookApp] Copying Traffic_Sign_Classifier_DropOut.ipynb to 
+[W 22:21:22.867 NotebookApp] Notebook Traffic_Sign_Classifier_DropOut.ipynb is not trusted
+[I 22:21:28.402 NotebookApp] Kernel started: c5f1baae-1dae-4f58-864a-2143f29fbbfa
+[I 22:21:56.752 NotebookApp] Kernel started: 21da24f9-8578-4e41-bf14-09542188a0d4
+[I 22:22:58.290 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-FC1024.ipynb
+[W 22:23:17.299 NotebookApp] Replacing stale connection: 21da24f9-8578-4e41-bf14-09542188a0d4:BFE54ABF134F4272BAFF086A10794943
+[W 22:23:17.996 NotebookApp] 400 GET /api/kernels/21da24f9-8578-4e41-bf14-09542188a0d4/channels?session_id=BFE54ABF134F4272BAFF086A10794943 (150.70.173.9) 698.90ms referer=None
+[I 22:23:29.278 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:23:31.632 NotebookApp] No such file or directory: Traffic_Sign_Classifier_DropOut-Copy1.ipynb
+[W 22:23:31.633 NotebookApp] 404 GET /api/contents/Traffic_Sign_Classifier_DropOut-Copy1.ipynb?type=notebook&_=1485210084811 (150.70.173.51) 1.07ms referer=None
+[I 22:23:32.819 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:23:36.953 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:7AB6165C1662412DBC66848246D47846
+[W 22:23:37.148 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=7AB6165C1662412DBC66848246D47846 (150.70.173.46) 197.22ms referer=None
+[I 22:23:37.248 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+[W 22:28:52.826 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:35CE9AC583A748C6978D5146652BF731
+[W 22:28:52.924 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=35CE9AC583A748C6978D5146652BF731 (150.70.173.45) 100.64ms referer=None
+[I 22:29:02.983 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 22:31:02.759 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+OpenCV Error: Assertion failed (_src.type() == CV_8UC1) in equalizeHist, file /home/travis/miniconda/conda-bld/work/opencv-3.1.0/modules/imgproc/src/histogram.cpp, line 3687
+OpenCV Error: Assertion failed (_src.type() == CV_8UC1) in equalizeHist, file /home/travis/miniconda/conda-bld/work/opencv-3.1.0/modules/imgproc/src/histogram.cpp, line 3687
+[I 22:34:36.161 NotebookApp] Kernel started: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a
+[I 22:34:38.795 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:34:47.291 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:9AF3BA1C62DF46EBB09B137734AD7144
+[W 22:34:47.373 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=9AF3BA1C62DF46EBB09B137734AD7144 (150.70.173.48) 83.38ms referer=None
+[W 22:35:29.494 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:FA8BDE3F0520412B8B06E1A48DD9C548
+[W 22:35:29.562 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=FA8BDE3F0520412B8B06E1A48DD9C548 (150.70.188.178) 69.68ms referer=None
+[W 22:37:36.425 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:D908FB42999749D38A73E575EAE31795
+[W 22:37:36.721 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=D908FB42999749D38A73E575EAE31795 (150.70.188.167) 297.93ms referer=None
+[I 22:38:06.894 NotebookApp] Saving file at /Untitled.ipynb
+[I 22:38:19.771 NotebookApp] Saving file at /Untitled.ipynb
+[I 22:38:53.093 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 22:39:26.987 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:39:44.859 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:1421B06786064C1A880524EE4D8B6564
+[W 22:39:44.955 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=1421B06786064C1A880524EE4D8B6564 (150.70.188.177) 98.31ms referer=None
+[I 22:40:23.855 NotebookApp] Saving file at /Untitled.ipynb
+[W 22:40:26.664 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:E34D01A7F36B4DDB842CE84188093409
+[W 22:40:26.734 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=E34D01A7F36B4DDB842CE84188093409 (150.70.188.170) 72.72ms referer=None
+[I 22:41:35.786 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 22:41:47.217 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:43:35.788 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:423F19D38C1E4E4AAA03B2D83703C297
+[W 22:43:35.862 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=423F19D38C1E4E4AAA03B2D83703C297 (150.70.173.45) 76.17ms referer=None
+[I 22:44:07.062 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 22:45:47.946 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:46:31.268 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:B749E891EF0D40F4BFC154386ED836BA
+[E 22:46:31.277 NotebookApp] Uncaught exception GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=B749E891EF0D40F4BFC154386ED836BA (166.170.37.101)
+    HTTPServerRequest(protocol='http', host='54.183.246.164:8888', method='GET', uri='/api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=B749E891EF0D40F4BFC154386ED836BA', version='HTTP/1.1', remote_ip='166.170.37.101', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', 'Cookie': '_xsrf=2|b2a4c2f2|bbfba0fc4b32deec7acac2051890f189|1485195345', 'Host': '54.183.246.164:8888', 'Upgrade': 'websocket', 'Connection': 'Upgrade', 'Sec-Websocket-Version': '13', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Sec-Websocket-Extensions': 'permessage-deflate; client_max_window_bits', 'Accept-Language': 'en-US,en;q=0.8', 'Accept-Encoding': 'gzip, deflate, sdch', 'Origin': 'http://54.183.246.164:8888', 'Sec-Websocket-Key': '2Jbcum4qJa1kC035b3WO5g=='})
+    Traceback (most recent call last):
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/tornado/web.py", line 1425, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "<string>", line 3, in raise_exc_info
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/tornado/stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/zmq/eventloop/zmqstream.py", line 191, in <lambda>
+        self.on_recv(lambda msg: callback(self, msg), copy=copy)
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/notebook/services/kernels/handlers.py", line 373, in _on_zmq_reply
+        super(ZMQChannelsHandler, self)._on_zmq_reply(stream, msg)
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/notebook/base/zmqhandlers.py", line 258, in _on_zmq_reply
+        self.write_message(msg, binary=isinstance(msg, bytes))
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/tornado/websocket.py", line 210, in write_message
+        raise WebSocketClosedError()
+    tornado.websocket.WebSocketClosedError
+[W 22:46:31.285 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=B749E891EF0D40F4BFC154386ED836BA (150.70.173.6) 19.12ms referer=None
+[I 22:47:05.429 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:48:39.474 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:71F077ADCDB642E48124242D2C3665A9
+[E 22:48:39.529 NotebookApp] Uncaught exception GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=71F077ADCDB642E48124242D2C3665A9 (166.170.37.101)
+    HTTPServerRequest(protocol='http', host='54.183.246.164:8888', method='GET', uri='/api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=71F077ADCDB642E48124242D2C3665A9', version='HTTP/1.1', remote_ip='166.170.37.101', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', 'Cookie': '_xsrf=2|b2a4c2f2|bbfba0fc4b32deec7acac2051890f189|1485195345', 'Host': '54.183.246.164:8888', 'Upgrade': 'websocket', 'Connection': 'Upgrade', 'Sec-Websocket-Version': '13', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Sec-Websocket-Extensions': 'permessage-deflate; client_max_window_bits', 'Accept-Language': 'en-US,en;q=0.8', 'Accept-Encoding': 'gzip, deflate, sdch', 'Origin': 'http://54.183.246.164:8888', 'Sec-Websocket-Key': 'cquyDXhsiwgXbYLNpvcHPg=='})
+    Traceback (most recent call last):
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/tornado/web.py", line 1425, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "<string>", line 3, in raise_exc_info
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/tornado/stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/zmq/eventloop/zmqstream.py", line 191, in <lambda>
+        self.on_recv(lambda msg: callback(self, msg), copy=copy)
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/notebook/services/kernels/handlers.py", line 373, in _on_zmq_reply
+        super(ZMQChannelsHandler, self)._on_zmq_reply(stream, msg)
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/notebook/base/zmqhandlers.py", line 258, in _on_zmq_reply
+        self.write_message(msg, binary=isinstance(msg, bytes))
+      File "/home/carnd/anaconda3/envs/carnd-term1/lib/python3.5/site-packages/tornado/websocket.py", line 210, in write_message
+        raise WebSocketClosedError()
+    tornado.websocket.WebSocketClosedError
+[W 22:48:39.530 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=71F077ADCDB642E48124242D2C3665A9 (150.70.173.6) 57.97ms referer=None
+[W 22:49:07.162 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:71F077ADCDB642E48124242D2C3665A9
+[W 22:51:23.688 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:A71DA79E746B49BDBE054865BAAF9D22
+[W 22:51:23.807 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=A71DA79E746B49BDBE054865BAAF9D22 (150.70.173.52) 120.46ms referer=None
+[I 22:51:49.613 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:54:15.272 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:700EBCC3ED7B4D8D819C2FCFB1267456
+[W 22:54:15.350 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=700EBCC3ED7B4D8D819C2FCFB1267456 (150.70.188.165) 80.44ms referer=None
+[I 22:54:48.923 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 22:54:49.028 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 22:56:50.431 NotebookApp] Saving file at /Untitled.ipynb
+[W 22:56:52.782 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:D2DDD615E2A04B3B8A2F503F4D1FE39D
+[W 22:56:52.842 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=D2DDD615E2A04B3B8A2F503F4D1FE39D (150.70.173.51) 61.89ms referer=None
+[I 22:57:04.777 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 22:58:36.261 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:C83316E264434FB1A0143DEF8B6303BA
+[W 22:58:36.358 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=C83316E264434FB1A0143DEF8B6303BA (150.70.188.168) 98.86ms referer=None
+[I 22:58:54.150 NotebookApp] Saving file at /Untitled.ipynb
+[I 22:59:25.590 NotebookApp] Saving file at /Untitled.ipynb
+[I 22:59:32.199 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:00:00.945 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:01:36.254 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:01:42.033 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:811FC04177204F7DB16DBA29CF7DBC35
+[W 23:01:42.083 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=811FC04177204F7DB16DBA29CF7DBC35 (150.70.173.10) 51.15ms referer=None
+[I 23:02:57.027 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:04:11.234 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:CAA41E3C6C0643228D4826177229D109
+[W 23:04:11.353 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=CAA41E3C6C0643228D4826177229D109 (150.70.188.178) 121.79ms referer=None
+[I 23:04:29.130 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:06:34.858 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:06:36.007 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:04AE3036BC92439F8AFF37F17722BA83
+[W 23:06:36.106 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=04AE3036BC92439F8AFF37F17722BA83 (150.70.173.49) 101.32ms referer=None
+[I 23:06:58.850 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:07:14.220 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:09:18.587 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:09:19.111 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:EA5D04C7B94D46DCADD9225B14C395B0
+[W 23:09:19.206 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=EA5D04C7B94D46DCADD9225B14C395B0 (150.70.188.170) 96.27ms referer=None
+[I 23:10:00.103 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:10:16.388 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:11:39.874 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:4F7CEFD144B64EEB9C61005E3A0B13F7
+[W 23:11:39.950 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=4F7CEFD144B64EEB9C61005E3A0B13F7 (150.70.173.7) 78.44ms referer=None
+[I 23:11:46.803 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:12:03.395 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=6FBF3A54AFDF4A1D8037EC971293F3BC (150.70.173.58) 2.41ms referer=None
+[W 23:13:42.091 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:F1885B4580A64B5BBCEBB5A60270DC9A
+[W 23:13:42.302 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=F1885B4580A64B5BBCEBB5A60270DC9A (150.70.173.59) 213.13ms referer=None
+[I 23:13:51.020 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:14:15.257 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:16:19.113 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:16:25.411 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:72C44C42336D445184B1706630E187FD
+[W 23:16:25.482 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=72C44C42336D445184B1706630E187FD (150.70.188.175) 73.21ms referer=None
+[I 23:17:12.507 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:17:17.479 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:18:18.385 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:19:33.544 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:4A4A6FB7508D4FA4AB26379F29B65F44
+[W 23:19:33.694 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=4A4A6FB7508D4FA4AB26379F29B65F44 (150.70.173.56) 153.30ms referer=None
+[I 23:19:58.376 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:20:22.844 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:21:39.566 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:21:41.973 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=88E4BCBC7D9F49758D98A8945350739F (150.70.173.59) 2.21ms referer=None
+[W 23:22:08.615 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=92AE32EEF77D46C8890A3D6764A209CD (150.70.188.168) 2.50ms referer=None
+[W 23:22:26.699 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=D68ED8FB70A440558EE3C30C76D9E19F (150.70.188.166) 2.26ms referer=None
+[W 23:23:32.245 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:0CAD21AA5B0A48F58D59AFE90AB1896F
+[W 23:23:32.322 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=0CAD21AA5B0A48F58D59AFE90AB1896F (150.70.188.180) 78.92ms referer=None
+[I 23:23:45.705 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:23:52.003 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:24:51.124 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 23:25:07.389 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 23:25:07.817 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 23:25:08.798 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 23:26:27.194 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:26:54.236 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:9033589749C343C88AD781FA9B541269
+[W 23:26:54.293 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=9033589749C343C88AD781FA9B541269 (150.70.173.58) 59.46ms referer=None
+[I 23:27:07.645 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:27:19.124 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[W 23:28:30.034 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=8534120376B947748C92A4C20AFC0670 (150.70.173.59) 2.51ms referer=None
+[W 23:28:42.617 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:7E61C1C490AB4A988632CB9723535ABF
+[W 23:28:42.718 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=7E61C1C490AB4A988632CB9723535ABF (150.70.173.7) 103.38ms referer=None
+[I 23:28:46.598 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:29:54.995 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:30:30.438 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:30:31.929 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:30:47.569 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=1E37FD5819CD47F0B1EFD02B7CC5C055 (150.70.173.8) 2.35ms referer=None
+[W 23:31:32.517 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:4B9840AF0F794CA28C53B7310B5B64C3
+[W 23:31:32.582 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=4B9840AF0F794CA28C53B7310B5B64C3 (150.70.188.169) 66.90ms referer=None
+[I 23:31:43.374 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:32:06.743 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:33:18.980 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:33:39.033 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=5B00015CA83D4758885CA443D790FEE8 (150.70.173.46) 2.43ms referer=None
+[W 23:34:31.971 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=76E19AE2A7324C948FD1A0EAF6622747 (150.70.173.42) 2.23ms referer=None
+[I 23:35:23.852 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:35:26.171 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:013BD8F2E3DD41F5B3A3480C60A09378
+[W 23:35:26.231 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=013BD8F2E3DD41F5B3A3480C60A09378 (150.70.188.171) 61.61ms referer=None
+[I 23:36:42.301 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:37:06.263 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:38:26.263 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:1F13CA78AC474030AC0602E91C802C41
+[W 23:38:26.344 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=1F13CA78AC474030AC0602E91C802C41 (150.70.188.171) 82.83ms referer=None
+[W 23:38:41.782 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=397CAA1F67A2446C947CD22945CACF89 (150.70.188.180) 2.38ms referer=None
+[I 23:39:12.664 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:40:23.441 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:42:04.850 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:42:04.988 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:42:53.154 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=46530DFF9BA547EB8EFC4AC5BD21D90E (150.70.173.6) 2.40ms referer=None
+[W 23:43:49.473 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:D9E4BA79D9D64FC8935DA0C045428880
+[W 23:43:51.348 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=D9E4BA79D9D64FC8935DA0C045428880 (150.70.173.7) 1877.25ms referer=None
+[I 23:44:08.400 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:44:36.801 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:46:35.628 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:46:56.396 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=D89B43F69BC842FE8049ED6F7E9B2B4F (150.70.173.44) 2.50ms referer=None
+[W 23:48:11.078 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:1502B6745020433E9DE21C61486B9973
+[W 23:48:11.230 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=1502B6745020433E9DE21C61486B9973 (150.70.188.165) 154.75ms referer=None
+[I 23:48:40.660 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:49:39.359 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:51:21.701 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:09A12EEE00AB4FA8909F9C60B9CFD5BE
+[W 23:51:21.770 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=09A12EEE00AB4FA8909F9C60B9CFD5BE (150.70.188.177) 70.31ms referer=None
+[I 23:51:44.869 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:53:17.160 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 23:55:04.960 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:55:17.432 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 23:55:30.963 NotebookApp] Saving file at /Untitled.ipynb
+[W 23:56:37.393 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=FDD2CD75D6E54D14A522C2279056F03E (150.70.173.9) 2.17ms referer=None
+[W 23:57:33.588 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:C11806B9723642EF89A82D5D39DB2656
+[W 23:57:33.691 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=C11806B9723642EF89A82D5D39DB2656 (150.70.188.170) 104.87ms referer=None
+[I 23:57:35.242 NotebookApp] Saving file at /Untitled.ipynb
+[I 23:59:13.876 NotebookApp] Saving file at /Untitled.ipynb
+[W 00:00:38.362 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:67047095A197484194EF2F0531039E56
+[W 00:00:38.434 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=67047095A197484194EF2F0531039E56 (150.70.188.175) 74.25ms referer=None
+[I 00:01:20.154 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:02:06.981 NotebookApp] Saving file at /Untitled.ipynb
+[W 00:03:55.118 NotebookApp] Replacing stale connection: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a:5ABBD594CFAB444CAF7046780C65717A
+[W 00:03:55.184 NotebookApp] 400 GET /api/kernels/2e7b43ef-cd03-4c47-b252-d8d342e0d04a/channels?session_id=5ABBD594CFAB444CAF7046780C65717A (150.70.173.6) 68.53ms referer=None
+[I 00:04:11.839 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:05:17.166 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 00:07:17.773 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 00:07:34.234 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 00:07:45.932 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 00:09:16.022 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 00:09:26.143 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 3.94GiB
+Free memory: 3.91GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[W 00:11:32.357 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:7D1A7EB634D542A882CF7FC9A15236A0
+[W 00:11:32.466 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=7D1A7EB634D542A882CF7FC9A15236A0 (150.70.188.172) 110.82ms referer=None
+[I 00:11:40.899 NotebookApp] Saving file at /Traffic_Sign_Classifier_Normalize_DropOut.ipynb
+[I 00:12:39.659 NotebookApp] Kernel interrupted: c5f1baae-1dae-4f58-864a-2143f29fbbfa
+[W 00:14:26.902 NotebookApp] Replacing stale connection: c5f1baae-1dae-4f58-864a-2143f29fbbfa:FC93265864B644B78A2E2A831A70FEA7
+[W 00:14:26.974 NotebookApp] 400 GET /api/kernels/c5f1baae-1dae-4f58-864a-2143f29fbbfa/channels?session_id=FC93265864B644B78A2E2A831A70FEA7 (150.70.188.165) 73.18ms referer=None
+[I 00:15:08.005 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:15:32.170 NotebookApp] Kernel shutdown: 21da24f9-8578-4e41-bf14-09542188a0d4
+[I 00:15:32.573 NotebookApp] Kernel shutdown: c2586f08-4af3-471e-a8bf-c7d0918557e2
+[I 00:15:33.709 NotebookApp] Kernel shutdown: c5f1baae-1dae-4f58-864a-2143f29fbbfa
+[I 00:15:34.513 NotebookApp] Kernel shutdown: 2e7b43ef-cd03-4c47-b252-d8d342e0d04a
+[I 00:45:10.157 NotebookApp] Kernel started: 61111fa6-a856-414d-a03d-c3e1c6ea8569
+[I 00:46:01.099 NotebookApp] Saving file at /Untitled.ipynb
+[W 00:46:08.357 NotebookApp] 400 GET /api/kernels/61111fa6-a856-414d-a03d-c3e1c6ea8569/channels?session_id=61BE0F34C6C742E48A7F2F49F949C83F (150.70.188.179) 2.61ms referer=None
+[I 00:46:24.068 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:46:56.779 NotebookApp] Saving file at /Untitled.ipynb
+[W 00:47:48.660 NotebookApp] 400 GET /api/kernels/61111fa6-a856-414d-a03d-c3e1c6ea8569/channels?session_id=5E1AAFEC60E6493A81E9E685263975AB (150.70.173.45) 2.43ms referer=None
+[I 00:48:06.228 NotebookApp] Saving file at /Untitled.ipynb
+[W 00:48:17.322 NotebookApp] 400 GET /api/kernels/61111fa6-a856-414d-a03d-c3e1c6ea8569/channels?session_id=D640CB37364641D688FE13092A5BCA97 (150.70.173.47) 2.28ms referer=None
+[W 00:48:33.317 NotebookApp] Replacing stale connection: 61111fa6-a856-414d-a03d-c3e1c6ea8569:C8F2765EAB7747A68B4F976A34DC7C2F
+[W 00:48:33.456 NotebookApp] 400 GET /api/kernels/61111fa6-a856-414d-a03d-c3e1c6ea8569/channels?session_id=C8F2765EAB7747A68B4F976A34DC7C2F (150.70.173.8) 141.11ms referer=None
+[I 00:49:01.510 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:49:14.308 NotebookApp] Saving file at /Untitled.ipynb
+[W 00:50:45.640 NotebookApp] Replacing stale connection: 61111fa6-a856-414d-a03d-c3e1c6ea8569:AAD12AAEC6004A8181D45ABD550873BE
+[W 00:50:45.711 NotebookApp] 400 GET /api/kernels/61111fa6-a856-414d-a03d-c3e1c6ea8569/channels?session_id=AAD12AAEC6004A8181D45ABD550873BE (150.70.173.9) 72.68ms referer=None
+[I 00:51:17.723 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:51:20.234 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:52:57.088 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:53:35.850 NotebookApp] Saving file at /Untitled.ipynb
+[W 00:54:32.674 NotebookApp] 400 GET /api/kernels/61111fa6-a856-414d-a03d-c3e1c6ea8569/channels?session_id=53A0F2C246E14F57934C134C44EF6E3A (150.70.188.175) 2.47ms referer=None
+[W 00:54:43.461 NotebookApp] Replacing stale connection: 61111fa6-a856-414d-a03d-c3e1c6ea8569:58F4F195795648ED83091AD6217A03BC
+[W 00:54:43.537 NotebookApp] 400 GET /api/kernels/61111fa6-a856-414d-a03d-c3e1c6ea8569/channels?session_id=58F4F195795648ED83091AD6217A03BC (150.70.173.50) 77.46ms referer=None
+[I 00:55:40.957 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:56:06.379 NotebookApp] Kernel started: 7f4be164-c6e3-4464-bddc-43fd10b359b9
+[I 00:57:10.377 NotebookApp] Kernel started: d3d27a80-7522-48e6-b748-a0c3a02cc679
+[I 00:57:32.768 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb
+[W 00:57:55.684 NotebookApp] Replacing stale connection: 7f4be164-c6e3-4464-bddc-43fd10b359b9:E1788EA38BA64B458764A19C63435901
+[W 00:57:55.891 NotebookApp] 400 GET /api/kernels/7f4be164-c6e3-4464-bddc-43fd10b359b9/channels?session_id=E1788EA38BA64B458764A19C63435901 (150.70.173.58) 208.92ms referer=None
+[I 00:58:07.909 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb
+[I 00:58:37.690 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb
+[W 00:58:40.325 NotebookApp] Replacing stale connection: d3d27a80-7522-48e6-b748-a0c3a02cc679:2176F3B50C3F460C8FC833D69A2EDC4F
+[W 00:58:40.467 NotebookApp] 400 GET /api/kernels/d3d27a80-7522-48e6-b748-a0c3a02cc679/channels?session_id=2176F3B50C3F460C8FC833D69A2EDC4F (150.70.173.41) 143.74ms referer=None
+[I 00:58:49.358 NotebookApp] Saving file at /Untitled.ipynb
+[I 00:59:03.369 NotebookApp] Kernel shutdown: d3d27a80-7522-48e6-b748-a0c3a02cc679
+[I 00:59:03.972 NotebookApp] Kernel shutdown: 61111fa6-a856-414d-a03d-c3e1c6ea8569
+[I 00:59:23.729 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GRID K520
+major: 3 minor: 0 memoryClockRate (GHz) 0.797
+pciBusID 0000:00:03.0
+Total memory: 3.94GiB
+Free memory: 3.91GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+[I 01:01:10.258 NotebookApp] Kernel interrupted: 7f4be164-c6e3-4464-bddc-43fd10b359b9
+[I 01:01:22.115 NotebookApp] Saving file at /Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb
+[I 01:01:29.766 NotebookApp] Kernel shutdown: 7f4be164-c6e3-4464-bddc-43fd10b359b9
+[W 01:01:39.930 NotebookApp] 404 GET /api/kernels/7f4be164-c6e3-4464-bddc-43fd10b359b9/channels?session_id=A325881F00D7428CBA63CF7753D9E2CD (150.70.173.6): Kernel does not exist: 7f4be164-c6e3-4464-bddc-43fd10b359b9
+[W 01:01:39.931 NotebookApp] 404 GET /api/kernels/7f4be164-c6e3-4464-bddc-43fd10b359b9/channels?session_id=A325881F00D7428CBA63CF7753D9E2CD (150.70.173.6) 3.45ms referer=None
+[W 01:11:16.013 NotebookApp] Notebook Traffic_Sign_Classifier.ipynb is not trusted
+[I 01:11:16.995 NotebookApp] Kernel started: e9b88d7c-e810-43ac-8d03-1048890c4f30
+[W 01:11:26.805 NotebookApp] 404 GET http://clientapi.ipip.net/echo.php?info=20170124091126 (139.162.34.160) 1.83ms referer=None
+[I 01:11:34.474 NotebookApp] Saving file at /Traffic_Sign_Classifier_original.ipynb
+[I 01:11:40.636 NotebookApp] Kernel shutdown: e9b88d7c-e810-43ac-8d03-1048890c4f30
+[I 01:11:49.354 NotebookApp] Kernel started: 780369f7-336a-49b3-b0dd-db3274bd187b
+[I 01:11:54.865 NotebookApp] Copying Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024.ipynb to 
+[I 01:11:58.303 NotebookApp] Kernel started: 769f1ca2-8191-4f2d-abe8-0a4e72cf2cf1
+[W 01:12:26.739 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier.ipynb (150.70.173.5): No such file or directory: Traffic_Sign_Classifier.ipynb
+[W 01:12:26.741 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier.ipynb (150.70.173.5) 2.03ms referer=None
+[W 01:12:42.072 NotebookApp] No such file or directory: Traffic_Sign_Classifier.ipynb
+[W 01:12:42.073 NotebookApp] 404 GET /api/contents/Traffic_Sign_Classifier.ipynb?type=notebook&_=1485220273520 (150.70.173.6) 1.50ms referer=None
+[W 01:12:48.630 NotebookApp] 404 GET /api/kernels/e9b88d7c-e810-43ac-8d03-1048890c4f30/channels?session_id=5AB91FAED3FA497A8D71479AB3029C7A (150.70.173.59): Kernel does not exist: e9b88d7c-e810-43ac-8d03-1048890c4f30
+[W 01:12:48.631 NotebookApp] 404 GET /api/kernels/e9b88d7c-e810-43ac-8d03-1048890c4f30/channels?session_id=5AB91FAED3FA497A8D71479AB3029C7A (150.70.173.59) 3.38ms referer=None
+[W 01:13:42.245 NotebookApp] Replacing stale connection: 769f1ca2-8191-4f2d-abe8-0a4e72cf2cf1:E49FE2FB422C4D678E6AB83E509AE6EE
+[W 01:13:42.309 NotebookApp] 400 GET /api/kernels/769f1ca2-8191-4f2d-abe8-0a4e72cf2cf1/channels?session_id=E49FE2FB422C4D678E6AB83E509AE6EE (150.70.173.8) 66.81ms referer=None
+[W 01:13:48.779 NotebookApp] No such file or directory: Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024-Copy1.ipynb
+[W 01:13:48.780 NotebookApp] 404 GET /api/contents/Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024-Copy1.ipynb?type=notebook&_=1485220313947 (150.70.173.52) 1.14ms referer=None
+[W 01:13:51.705 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024-Copy1.ipynb (150.70.173.50): No such file or directory: Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024-Copy1.ipynb
+[W 01:13:51.707 NotebookApp] 404 GET /notebooks/Traffic_Sign_Classifier_EqHist_Normalize_DropOut-3xConv1Filters-DropOut-FC1024-Copy1.ipynb (150.70.173.50) 1.69ms referer=None
+[I 01:13:59.093 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 01:14:03.379 NotebookApp] Replacing stale connection: 780369f7-336a-49b3-b0dd-db3274bd187b:B7E1FFF19B8449028F84BD27F63EF922
+[W 01:14:03.489 NotebookApp] 400 GET /api/kernels/780369f7-336a-49b3-b0dd-db3274bd187b/channels?session_id=B7E1FFF19B8449028F84BD27F63EF922 (150.70.173.8) 111.82ms referer=None
+[I 01:14:54.924 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:15:59.278 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:17:27.057 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:18:23.899 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:19:35.776 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:19:44.138 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:20:05.846 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 01:21:34.940 NotebookApp] Replacing stale connection: 769f1ca2-8191-4f2d-abe8-0a4e72cf2cf1:805CF84DCD404119834C939307738351
+[W 01:21:35.217 NotebookApp] 400 GET /api/kernels/769f1ca2-8191-4f2d-abe8-0a4e72cf2cf1/channels?session_id=805CF84DCD404119834C939307738351 (150.70.188.170) 279.27ms referer=None
+[I 01:21:43.667 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:23:05.311 NotebookApp] Kernel shutdown: 780369f7-336a-49b3-b0dd-db3274bd187b
+[I 01:23:05.815 NotebookApp] Kernel shutdown: 769f1ca2-8191-4f2d-abe8-0a4e72cf2cf1
+[I 01:35:55.898 NotebookApp] Kernel started: 5b96927a-c8ac-42a3-86e3-4c8114e54051
+[I 01:37:31.488 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[W 01:37:49.737 NotebookApp] Replacing stale connection: 5b96927a-c8ac-42a3-86e3-4c8114e54051:818CA41121024D918BD737E584F21EB1
+[W 01:37:49.807 NotebookApp] 400 GET /api/kernels/5b96927a-c8ac-42a3-86e3-4c8114e54051/channels?session_id=818CA41121024D918BD737E584F21EB1 (150.70.173.53) 71.81ms referer=None
+[I 01:39:03.578 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:39:06.728 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:48:01.481 NotebookApp] Saving file at /Traffic_Sign_Classifier_Submission.ipynb
+[I 01:48:09.082 NotebookApp] Kernel shutdown: 5b96927a-c8ac-42a3-86e3-4c8114e54051
+[I 01:49:27.050 NotebookApp] Kernel started: ac11001f-5588-4ed8-841f-f4a835b9091e
+[W 01:51:23.002 NotebookApp] Replacing stale connection: ac11001f-5588-4ed8-841f-f4a835b9091e:3C9D2848D70E4835801CC365BEAE4E8B
+[W 01:51:23.141 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=3C9D2848D70E4835801CC365BEAE4E8B (150.70.188.171) 141.51ms referer=None
+[W 02:01:03.334 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=5F14AE103E20400E97EA995456CC8C9E (150.70.173.49) 2.52ms referer=None
+[W 02:02:36.681 NotebookApp] Replacing stale connection: ac11001f-5588-4ed8-841f-f4a835b9091e:7E5BCC6CDB84441D93D1FDF4A72E66CE
+[W 02:02:36.767 NotebookApp] 400 GET /api/kernels/ac11001f-5588-4ed8-841f-f4a835b9091e/channels?session_id=7E5BCC6CDB84441D93D1FDF4A72E66CE (150.70.188.171) 87.84ms referer=None
